@@ -1,19 +1,35 @@
-<!--
-  Generated template for the Addlist page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
+ 
   <ion-navbar>
-    <ion-title>addlist</ion-title>
+    <ion-title>itens</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="AddIten()"><ion-icon name="add"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
-
+ 
 </ion-header>
-
-
-<ion-content padding>
-
-teste teste
+ 
+<ion-content>
+ 
+    <ion-list>
+ 
+        <ion-item-sliding *ngFor="let iten of itens">
+ 
+            <ion-item>
+                {{iten.quantidade}}   {{iten.title}}
+            </ion-item>
+ 
+            <ion-item-options>
+                <button ion-button icon-only (click)="editIten(iten)" light>
+                    <ion-icon name="paper"></ion-icon>
+                </button>
+                <button ion-button icon-only (click)="deleteIten(iten)" danger>
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+ 
+        </ion-item-sliding>
+ 
+    </ion-list>
+ 
 </ion-content>
