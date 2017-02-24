@@ -5,6 +5,7 @@ import { TelaInicialPage } from '../pages/tela-inicial/tela-inicial';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { AddlistPage } from '../pages/addlist/addlist';
+import { MapPage } from '../pages/map/map'
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AddlistPage } from '../pages/addlist/addlist';
     TelaInicialPage,
     ItemDetailsPage,
     ListPage,
-    AddlistPage
+    AddlistPage,
+    MapPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +25,8 @@ import { AddlistPage } from '../pages/addlist/addlist';
     TelaInicialPage,
     ItemDetailsPage,
     ListPage,
-    AddlistPage
+    AddlistPage,
+    MapPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
