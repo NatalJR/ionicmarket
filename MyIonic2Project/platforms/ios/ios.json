@@ -79,6 +79,10 @@
                         {
                             "xml": "<feature name=\"TileOverlay\"><param name=\"ios-package\" value=\"TileOverlay\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SQLitePlugin\"><param name=\"ios-package\" value=\"SQLitePlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -146,6 +150,9 @@
             "NSLOCATIONWHENINUSEUSAGEDESCRIPTION": "Show your location on the map",
             "NSLOCATIONALWAYSUSAGEDESCRIPTION": "Trace your location on the map",
             "PACKAGE_NAME": "com.ionicframework.myionic2project757765"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ionicframework.myionic2project757765"
         }
     },
     "dependent_plugins": {},
@@ -206,6 +213,14 @@
             "clobbers": [
                 "cordova-plugin-googlemaps"
             ]
+        },
+        {
+            "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+            "id": "cordova-sqlite-storage.SQLitePlugin",
+            "pluginId": "cordova-sqlite-storage",
+            "clobbers": [
+                "SQLitePlugin"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -216,6 +231,7 @@
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-splashscreen": "4.0.1",
         "com.googlemaps.ios": "2.1.1",
-        "cordova-plugin-googlemaps": "1.4.0"
+        "cordova-plugin-googlemaps": "1.4.0",
+        "cordova-sqlite-storage": "2.0.2"
     }
 }
