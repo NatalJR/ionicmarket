@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, Platform} from 'ionic-angular';
-//import { Data } from '../../providers/data';
 import { Storage } from '@ionic/storage';
 import { Toast } from 'ionic-native';
 
@@ -10,9 +9,16 @@ import { Toast } from 'ionic-native';
 })
 export class AddlistPage {
 
-	public items;
+	public items:any;
 
 	constructor(public navCtrl: NavController, public alertCtrl: AlertController, public storage: Storage,  private platform: Platform) {
+
+		this.storage.ready().then(() => {
+			this.storage.get('itemList').then((itemList) => {
+				this.items = JSON.parse(itemList);
+			});
+		});
+		if(this.items==null){this.items=[];};
 	}	 
 
 	ionViewDidLoad(){
@@ -22,9 +28,10 @@ export class AddlistPage {
 	ionViewDidEnter(){
 		this.storage.ready().then(() => {
 			this.storage.get('itemList').then((itemList) => {
-				this.items = itemList;
+				this.items = JSON.parse(itemList);
 			});
 		});
+		if(this.items==null){this.items=[];};
 	}
 
 	AddItem(){
@@ -44,7 +51,6 @@ export class AddlistPage {
 				handler: data => {
 					if(data) {
 						this.items.push(data);
-						//this.SaveItem(data);
 					}
 				}
 			}
@@ -82,19 +88,10 @@ export class AddlistPage {
 
 	}
 
-	// SaveItem(item){
-		// 	  this.items.push(item);
-		// 	console.log(item);
-		// 	this.storage.set('items', item);
-		// 	  this.showToast("Item adicionado");
-		// }
-
 		SaveLista(lista){
-			//this.items.push(item);
-			console.log(lista);
-			this.storage.set('itemList', lista);
+			this.storage.set('itemList', JSON.stringify(lista));
 			this.navCtrl.pop();
-			//this.showToast("Item adicionado");
+			this.showToast("Lista Salva");
 		}
 
 		DeleteItem(item){
@@ -107,7 +104,7 @@ export class AddlistPage {
 
 		showToast(message) {
 			this.platform.ready().then(() =>
-				Toast.show(message, '5000', 'bottom').subscribe(
+				Toast.show(message, 'short', 'bottom').subscribe(
 					toast => {
 						console.log(toast);
 					}

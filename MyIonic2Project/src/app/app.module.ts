@@ -7,10 +7,9 @@ import { ListPage } from '../pages/list/list';
 import { AddlistPage } from '../pages/addlist/addlist';
 import { MapPage } from '../pages/map/map'
 import { Storage } from '@ionic/storage';
-import { Data } from '../providers/data';
 
 export function provideStorage() {
-  return new Storage(['sqlite', 'websql', 'indexeddb'], { name: '__db' });
+  return new Storage(['indexeddb', 'websql', 'sqlite'], { name: '__db' });
 }
 
 @NgModule({
@@ -34,6 +33,6 @@ export function provideStorage() {
     AddlistPage,
     MapPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, {provide:Storage, useFactory: provideStorage}, Data]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, {provide:Storage, useFactory: provideStorage}]
 })
 export class AppModule {}
