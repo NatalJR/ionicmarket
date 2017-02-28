@@ -6,15 +6,15 @@ import {MapPage} from '../map/map'
 
 
 @Component({
-  selector: 'page-tela-inicial',
-  templateUrl: 'tela-inicial.html'
+	selector: 'page-tela-inicial',
+	templateUrl: 'tela-inicial.html'
 })
 
 export class TelaInicialPage {
-  MapPage = MapPage;
-  ListPage = ListPage;
-  AddlistPage = AddlistPage;
-  constructor() {
+	MapPage = MapPage;
+	ListPage = ListPage;
+	AddlistPage = AddlistPage;
+	constructor() {
 
-  }
+	}
 }

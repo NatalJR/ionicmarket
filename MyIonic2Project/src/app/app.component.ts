@@ -1,12 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { Platform, MenuController, Nav } from 'ionic-angular';
-
 import { StatusBar, Splashscreen } from 'ionic-native';
-
 import { TelaInicialPage } from '../pages/tela-inicial/tela-inicial';
 import { ListPage } from '../pages/list/list';
-
 
 @Component({
   templateUrl: 'app.html'
@@ -18,16 +14,13 @@ export class MyApp {
   rootPage: any = TelaInicialPage;
   pages: Array<{title: string, component: any}>;
 
-  constructor(
-    public platform: Platform,
-    public menu: MenuController
-  ) {
+  constructor( public platform: Platform, public menu: MenuController) {
     this.initializeApp();
 
     // set our app's pages
     this.pages = [
       { title: 'Home', component: TelaInicialPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Listas', component: ListPage }
     ];
   }
 

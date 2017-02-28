@@ -60,6 +60,8 @@
 		FC8F7801AFB5409E843F30C7 /* MyPluginScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE5DB9E5AFD42EBB623CF9C /* MyPluginScrollView.m */; };
 		F74BF9956AC34ECD84C64681 /* SQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = C36ADCD883AA4D0A8CFD7EA1 /* SQLitePlugin.m */; };
 		9041CCB62C1846F5B0A4A2D6 /* sqlite3.c in Resources */ = {isa = PBXBuildFile; fileRef = 44BADC016ECE47059DBF9416 /* sqlite3.c */; settings = {COMPILER_FLAGS = "-DSQLITE_TEMP_STORE=2 -DSQLITE_THREADSAFE=1 -DSQLITE_ENABLE_FTS3 -DSQLITE_ENABLE_FTS3_PARENTHESIS -DSQLITE_ENABLE_FTS4 -DSQLITE_ENABLE_RTREE  -DSQLITE_OMIT_BUILTIN_TEST -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_DEFAULT_PAGE_SIZE=1024 -DSQLITE_DEFAULT_CACHE_SIZE=2000"; }; };
+		BA77AA89CD4A4928A2583582 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EF9446F0B040FD8D38DE3B /* Toast+UIView.m */; };
+		F8482E944A7941AC94265DB1 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D2D41450F74E408F5ED073 /* Toast.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +176,10 @@
 		44BADC016ECE47059DBF9416 /* sqlite3.c */ = {isa = PBXFileReference; name = "sqlite3.c"; path = "cordova-sqlite-storage/sqlite3.c"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7EB9E140F42649D4AED628CC /* SQLitePlugin.h */ = {isa = PBXFileReference; name = "SQLitePlugin.h"; path = "cordova-sqlite-storage/SQLitePlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		667C417125B248D784153DBC /* sqlite3.h */ = {isa = PBXFileReference; name = "sqlite3.h"; path = "cordova-sqlite-storage/sqlite3.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		42EF9446F0B040FD8D38DE3B /* Toast+UIView.m */ = {isa = PBXFileReference; name = "Toast+UIView.m"; path = "cordova-plugin-x-toast/Toast+UIView.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		37D2D41450F74E408F5ED073 /* Toast.m */ = {isa = PBXFileReference; name = "Toast.m"; path = "cordova-plugin-x-toast/Toast.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		93D28737549D47AFB0081E5D /* Toast+UIView.h */ = {isa = PBXFileReference; name = "Toast+UIView.h"; path = "cordova-plugin-x-toast/Toast+UIView.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		CA323F1E5B3D4210B9B8F3A8 /* Toast.h */ = {isa = PBXFileReference; name = "Toast.h"; path = "cordova-plugin-x-toast/Toast.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +372,10 @@
 				44BADC016ECE47059DBF9416 /* sqlite3.c */,
 				7EB9E140F42649D4AED628CC /* SQLitePlugin.h */,
 				667C417125B248D784153DBC /* sqlite3.h */,
+				42EF9446F0B040FD8D38DE3B /* Toast+UIView.m */,
+				37D2D41450F74E408F5ED073 /* Toast.m */,
+				93D28737549D47AFB0081E5D /* Toast+UIView.h */,
+				CA323F1E5B3D4210B9B8F3A8 /* Toast.h */,
 			);
 			name = Plugins;
 			path = "MyIonic2Project/Plugins";
@@ -507,6 +517,8 @@
 				FC8F7801AFB5409E843F30C7 /* MyPluginScrollView.m in Sources */,
 				F74BF9956AC34ECD84C64681 /* SQLitePlugin.m in Sources */,
 				9041CCB62C1846F5B0A4A2D6 /* sqlite3.c in Resources */,
+				BA77AA89CD4A4928A2583582 /* Toast+UIView.m in Sources */,
+				F8482E944A7941AC94265DB1 /* Toast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
