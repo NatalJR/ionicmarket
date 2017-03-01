@@ -28,13 +28,23 @@ export class ListPage {
       });
     });
     if(this.listas==null){this.listas=[];};
-
-    
   }
 
+  ionViewDidEnter(){
+    this.storage.ready().then(() => {
+      this.storage.get('itemList').then((itemList) => {
+        this.listas = JSON.parse(itemList);
+      });
+    });
+    if(this.listas==null){this.listas=[];};
+  }
+
+
   itemTapped(event, item) {
+    
     this.navCtrl.push(ItemDetailsPage, {
-      item: item
+      item: item,
+      index:this.listas.indexOf(item)
     });
   }
 }

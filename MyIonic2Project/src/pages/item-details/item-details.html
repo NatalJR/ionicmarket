@@ -23,8 +23,9 @@
       </ion-row>
     </ion-grid> 
       
-   <!-- <ion-item-sliding *ngFor="let item of selectedItem"> -->     
-        <ion-grid *ngFor="let item of selectedItem">
+    <ion-item-sliding *ngFor="let item of selectedItem">    
+      <ion-item>
+        <ion-grid>
           <ion-row>           
             <ion-col width-25 text-center>
               {{item.quantidade}}
@@ -37,8 +38,8 @@
             </ion-col>
           </ion-row>
         </ion-grid> 
-
-<!--      <ion-item-options>        
+      </ion-item>
+      <ion-item-options>        
         <button ion-button icon-only (click)="EditItem(item)" light>
           <ion-icon name="paper"></ion-icon>
         </button>
@@ -48,8 +49,7 @@
       </ion-item-options>
     </ion-item-sliding>
   
-  <button ion-button full (click)="SaveLista(items)">Salvar lista</button>
-  <button ion-button full color="danger" navPop>Cancelar</button>
--->
+  <button ion-button full (click)="SaveLista(selectedItem)" navPop>Editar Lista</button>
+  <button ion-button full color="danger" (click)="DeleteList()"navPop>Excluir Lista</button>
   </ion-list>
 </ion-content>
