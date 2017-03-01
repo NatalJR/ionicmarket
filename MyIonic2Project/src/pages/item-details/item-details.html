@@ -3,16 +3,53 @@
     <button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>Lista Selecionada</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.title}}
-    <ion-icon [name]="selectedItem.icon"></ion-icon>
-  </h3>
-  <h4 text-center *ngIf="selectedItem">
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </h4>
+  <ion-list>    
+    <ion-grid>
+      <ion-row>
+        <ion-col width-25 text-center>
+          Quantidade
+        </ion-col>
+        <ion-col width-50 text-center>
+          Produto
+        </ion-col>
+        <ion-col width-25 text-center>
+          Valor (R$)
+        </ion-col>      
+      </ion-row>
+    </ion-grid> 
+      
+   <!-- <ion-item-sliding *ngFor="let item of selectedItem"> -->     
+        <ion-grid *ngFor="let item of selectedItem">
+          <ion-row>           
+            <ion-col width-25 text-center>
+              {{item.quantidade}}
+            </ion-col>            
+            <ion-col width-50 text-center>
+              {{item.title}}
+            </ion-col>
+            <ion-col width-25 text-center>
+              {{item.valor}}
+            </ion-col>
+          </ion-row>
+        </ion-grid> 
+
+<!--      <ion-item-options>        
+        <button ion-button icon-only (click)="EditItem(item)" light>
+          <ion-icon name="paper"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="DeleteItem(item)" danger>
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  
+  <button ion-button full (click)="SaveLista(items)">Salvar lista</button>
+  <button ion-button full color="danger" navPop>Cancelar</button>
+-->
+  </ion-list>
 </ion-content>

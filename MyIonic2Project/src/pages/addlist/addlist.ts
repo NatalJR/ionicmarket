@@ -8,17 +8,18 @@ import { Toast } from 'ionic-native';
 	templateUrl: 'addlist.html'
 })
 export class AddlistPage {
-
+	
+	public listas:any;
 	public items:any;
 
 	constructor(public navCtrl: NavController, public alertCtrl: AlertController, public storage: Storage,  private platform: Platform) {
 
 		this.storage.ready().then(() => {
 			this.storage.get('itemList').then((itemList) => {
-				this.items = JSON.parse(itemList);
+				this.listas = JSON.parse(itemList);
 			});
 		});
-		if(this.items==null){this.items=[];};
+		if(this.listas==null){this.listas=[];};
 	}	 
 
 	ionViewDidLoad(){
@@ -28,10 +29,10 @@ export class AddlistPage {
 	ionViewDidEnter(){
 		this.storage.ready().then(() => {
 			this.storage.get('itemList').then((itemList) => {
-				this.items = JSON.parse(itemList);
+				this.listas = JSON.parse(itemList);
 			});
 		});
-		if(this.items==null){this.items=[];};
+		if(this.listas==null){this.listas=[];};
 	}
 
 	AddItem(){
@@ -40,7 +41,8 @@ export class AddlistPage {
 			title: 'Adicionar Item',
 			inputs: [
 			{ type: 'string',   placeholder: 'Produto',     name: 'title'},
-			{ type: 'number',   placeholder: 'Quantidade',  name: 'quantidade'}
+			{ type: 'number',   placeholder: 'Quantidade',  name: 'quantidade'},
+			{type: 'number', placeholder: 'Valor', name:'valor'}
 			],
 			buttons: [
 			{
@@ -65,8 +67,9 @@ export class AddlistPage {
 		let prompt = this.alertCtrl.create({
 			title: 'Editar Produto',
 			inputs: [
-			{ type: 'string',   placeholder: 'Produto',     name: 'title'},
-			{ type: 'number',   placeholder: 'Quantidade',  name: 'quantidade'}],
+			{ type: 'string', placeholder: 'Produto',  value: item.title,     name: 'title'},
+			{ type: 'number', placeholder: 'Quantidade',  value: item.quantidade,  name: 'quantidade'},
+			{ type: 'number', placeholder: 'Valor',  value: item.valor,  name: 'valor'}],
 			buttons: [
 			{
 				text: 'Cancelar'
@@ -88,10 +91,14 @@ export class AddlistPage {
 
 	}
 
-		SaveLista(lista){
-			this.storage.set('itemList', JSON.stringify(lista));
+		SaveLista(items){
+			if(this.listas==null){this.listas=[];};
+			this.listas.push(items);
+			this.storage.set('itemList', JSON.stringify(this.listas));
 			this.navCtrl.pop();
-			this.showToast("Lista Salva");
+			//this.showToast("Lista Salva");
+
+
 		}
 
 		DeleteItem(item){

@@ -3,21 +3,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>My First List</ion-title>
+    <ion-title> <ion-icon name="basket" icon-left> </ion-icon> Lista Salva  </ion-title>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon name="{{item.icon}}" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center>
+          Listas:
+        </ion-col>   
+      </ion-row>
+    </ion-grid> 
+    <button ion-item *ngFor="let lista of listas" (click)="itemTapped($event, lista)">      
+        <ion-grid>
+          <ion-row>           
+            <ion-col text-center>
+              Lista {{listas.indexOf(lista)+1}}
+            </ion-col>            
+          </ion-row>
+        </ion-grid>
     </button>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>

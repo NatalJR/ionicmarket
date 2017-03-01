@@ -1,6 +1,6 @@
 <ion-header>	
 	<ion-navbar>
-		<ion-title>Lista</ion-title>
+		<ion-title>Adicionar a Lista</ion-title>
 		<ion-buttons end>
 			<button ion-button icon-only (click)="AddItem()"><ion-icon name="add"></ion-icon></button>
 		</ion-buttons>
@@ -11,11 +11,14 @@
 	<ion-list>		
 		<ion-grid>
 			<ion-row>
-				<ion-col width-33>
+				<ion-col width-25 text-center>
 					Quantidade
 				</ion-col>
-				<ion-col width-66>
+				<ion-col width-50 text-center>
 					Produto
+				</ion-col>
+				<ion-col width-25 text-center>
+					Valor (R$)
 				</ion-col>			
 			</ion-row>
 		</ion-grid>	
@@ -24,12 +27,16 @@
 			<ion-item>				
 				<ion-grid>
 					<ion-row>						
-						<ion-col width-33>
+						<ion-col width-25 text-center>
 							{{item.quantidade}}
 						</ion-col>						
-						<ion-col width-66>
+						<ion-col width-50 text-center>
 							{{item.title}}
 						</ion-col>
+						<ion-col width-25 text-center>
+							{{item.valor}}
+						</ion-col>
+
 					</ion-row>
 				</ion-grid>			
 			</ion-item>
